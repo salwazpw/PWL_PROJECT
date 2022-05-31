@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\MakananController;
+use App\Http\Controllers\MinumanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('kamar',KamarController::class);
 Route::resource('makanan',MakananController::class);
+Route::resource('minuman',MinumanController::class);

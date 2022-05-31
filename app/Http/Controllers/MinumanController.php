@@ -58,6 +58,12 @@ class MinumanController extends Controller
         return redirect()->route('minuman.index');
     }
 
+    public function show($id)
+    {
+        $minuman = Minuman::find($id);
+        return view('minuman.minumanDetail',compact('minuman'));
+    }
+
     public function edit($id)
     {
         $minuman = Minuman::find($id);

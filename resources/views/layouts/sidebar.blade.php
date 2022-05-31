@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{route('minuman.index')}}" class="nav-link">
                   <i class="fas fa-coffee nav-icon"></i>
                   <p>Data Minuman</p>
                 </a>
