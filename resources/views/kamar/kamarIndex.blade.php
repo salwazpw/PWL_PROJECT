@@ -51,7 +51,7 @@
                         <td>{{$data->id}}</td>
                         <td>{{$data->tipe_kamar}}</td>
                         <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->foto_kamar) }}"></td>
-                        <td>{{$data->harga}}</td>
+                        <td>{{Rp. $data->harga}}</td>
                         <td>
                             <form action="{{ route('kamar.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('kamar.show', $data->id)}}"><i class="fa fa-eye"></i></a>
