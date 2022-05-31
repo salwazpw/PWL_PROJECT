@@ -37,11 +37,11 @@ class MakananController extends Controller
         $request -> validate([
             'id'=> 'required|string|max:10',
             'nama_makanan' => 'required|string',
-            'foto_makanan' => 'required',
-            'harga' => 'required|float',
+            'gambar_makanan' => 'required',
+            'harga' => 'required',
         ]);
-        
-        $makanan = new Makanan;
+
+        $makanan = new Makanan();
         $makanan->id = $request->get('id');
         $makanan->nama_makanan = $request->get('nama_makanan');
         $makanan->harga = $request->get('harga');

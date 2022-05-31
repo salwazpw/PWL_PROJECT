@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\MakananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('kamar',KamarController::class);
+Route::resource('makanan',MakananController::class);
