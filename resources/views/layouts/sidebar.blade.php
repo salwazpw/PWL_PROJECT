@@ -38,7 +38,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a class="nav-link" href="{{route('kamar.index')}}">
+            <a class="nav-link" href="{{route('pengunjung.index')}}">
                 <i class="nav-icon fas fa-male"></i>
                   <span class="menu-title">Data Pengunjung</span>
             </a>

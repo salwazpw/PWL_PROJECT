@@ -56,7 +56,7 @@ class PengunjungController extends Controller
             'nik' => 'required|max:16',
             'nama' => 'required|string',
             'jenis_kelamin' => 'required',
-            'alamat' => 'required',
+            'alamat' => 'required|string',
             'no_telp' => 'required|max:13',
         ]);
         $pengunjung = new Pengunjung();
