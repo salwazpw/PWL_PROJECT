@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Kamar;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 
 class KamarController extends Controller
 {
@@ -15,7 +17,7 @@ class KamarController extends Controller
     public function index(Request $request)
     {
         $pagination = 5;
-        $pegawai = Kamar::when($request->keyword, function($query) use ($request){
+        $kamar = Kamar::when($request->keyword, function($query) use ($request){
             $query
             ->where('id','like',"%{$request->keyword}%")
             ->orWhere('tipe_kamar','like',"%{$request->keyword}%")
@@ -24,8 +26,8 @@ class KamarController extends Controller
         })->orderBy('id')->paginate($pagination);
 
 
-            $pegawai->appends($request->only('keyword'));
-            return view('kamar.kamarindex',compact('kamar'))
+            $kamar->appends($request->only('keyword'));
+            return view('kamar.kamarIndex',compact('kamar'))
                 ->with('i',(request()->input('page',1)-1)*$pagination);
     }
 
@@ -36,7 +38,8 @@ class KamarController extends Controller
      */
     public function create()
     {
-        //
+        $kamar = Kamar::all();
+        return view('kamar.kamarCreate',['kamar'=>$kamar]);
     }
 
     /**
@@ -47,7 +50,28 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'id'=> 'required|string|max:10',
+            'tipe_kamar' => 'required|string',
+            'foto_kamar' => 'required',
+            'harga' => 'required',
+        ]);
+
+        $kamar = new Kamar();
+        $kamar->id = $request->get('id');
+        $kamar->tipe_kamar = $request->get('tipe_kamar');
+        $kamar->harga = $request->get('harga');
+
+        if ($request->file('foto_kamar')){
+            $image_name = $request ->file('foto_kamar')->store('images', 'public');
+        }
+
+        $kamar->foto_kamar = $image_name;
+
+        $kamar->save();
+        
+        Alert::success('Success','Data Kamar Berhasil Ditambahkan');
+        return redirect()->route('kamar.index');
     }
 
     /**
@@ -58,7 +82,8 @@ class KamarController extends Controller
      */
     public function show($id)
     {
-        //
+        $kamar = Kamar::find($id);
+        return view('kamar.kamarDetail',compact('kamar'));
     }
 
     /**
@@ -69,7 +94,8 @@ class KamarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kamar = Kamar::find($id);
+        return view('kamar.kamarEdit',compact('kamar'));
     }
 
     /**
@@ -81,7 +107,30 @@ class KamarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request -> validate([
+            'id'=> 'required|string|max:10',
+            'tipe_kamar' => 'required|string',
+            'harga' => 'required',
+        ]);
+
+        $kamar = Kamar::where('id', $id)->first();
+        $kamar->id = $request->get('id');
+        $image_name = $request->file('foto_kamar')->store('images', 'public');
+        $kamar->foto_kamar = $image_name;
+        $kamar->harga = $request->get('harga');
+
+        if($request->hasFile('foto_kamar')){
+            if($kamar->foto_kamar && file_exists(storage_path('app/public/'. $kamar->foto_kamar))){
+                Storage::delete('public/'.$kamar->foto_kamar);
+            }
+            $image_name = $request->file('foto_kamar')->store('images', 'public');
+            $kamar->foto_kamar = $image_name;
+        }
+        
+        $kamar->save();
+
+        return redirect()->route('kamar.index')
+        ->with('success', 'Data Kamar Berhasil Diupdate');
     }
 
     /**
@@ -92,6 +141,8 @@ class KamarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Kamar::find($id)->delete();
+        return redirect()->route('kamar.index')
+            -> with('success', 'Data Kamar Berhasil Dihapus');
     }
 }
