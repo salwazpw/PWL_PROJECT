@@ -3,12 +3,9 @@
     Edit Data Pengunjung | QUEEN Z
 @endsection
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
+<div class="mt-5 col-md-8 mx-auto">
+  <div class="card ">
+          <h5 class="card-header bg-primary
             <h5 class="card-header bg-yellow text-white">Edit Data Pengunjung</h5>
             <div class="card-body">
               @if ($errors->any())
@@ -21,7 +18,6 @@
                 </ul>
               </div>
             </div>
-        </div>
               @endif
               <form method="POST" enctype="multipart/form-data"  action="{{route('pengunjung.update',$pengunjung->id)}}">
                 @csrf
@@ -56,7 +52,6 @@
                                       </div>
                                 </div>
                           </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
