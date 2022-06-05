@@ -55,7 +55,7 @@
                         <td>
                             <form action="{{ route('minuman.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('minuman.show', $data->id)}}"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-icons btn-warning" href="{{route('minuman.edit', $data->id)}}"><i class="fa fa-pen"></i></a>
+                                <a class="btn btn-icons btn-warning" href="{{route('minuman.edit', $data->id)}}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>

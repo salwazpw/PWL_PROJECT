@@ -1,100 +1,60 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{asset('template/dist/img/logoz.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">QUEEN Z</span>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </a>
+<aside class="left-sidebar" data-sidebarbg="skin6">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar" data-sidebarbg="skin6">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+          <ul id="sidebarnav">
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/dashboard"
+                      aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                          class="hide-menu">Dashboard</span></a></li>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{asset('template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('pengunjung.index')}}">
-                <i class="nav-icon fas fa-male"></i>
-                  <span class="menu-title">Data Pengunjung</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('kamar.index')}}">
-                <i class="nav-icon fas fa-user-tie"></i>
-                  <span class="menu-title">Data Pegawai</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('kamar.index')}}">
-              <i class="nav-icon 	fa fa-bed"></i>
-                <span class="menu-title">Data Kamar</span>
-              </a>
+              <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
+              <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                      aria-expanded="false"><i class="fas fa-utensils"></i><span
+                          class="hide-menu">Catering </span></a>
+                  <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                      <li class="sidebar-item"><a href="{{route('makanan.index')}}" class="sidebar-link"><span
+                                  class="hide-menu"> Data Makanan
+                              </span></a>
+                      </li>
+                      <li class="sidebar-item"><a href="{{route('minuman.index')}}" class="sidebar-link"><span
+                                  class="hide-menu"> Data Minuman
+                              </span></a>
+                      </li>
+                      <li class="sidebar-item"><a href="#" class="sidebar-link"><span
+                                  class="hide-menu"> Data Pesanan
+                              </span></a>
+                      </li>
+                  </ul>
               </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-concierge-bell"></i>
-              <p>
-                Catering
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('makanan.index')}}" class="nav-link">
-                  <i class="nav-icon material-icons">&#xe561;</i>
-                  <p>Data Makanan</p>
-                </a>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('kamar.index')}}"
+                      aria-expanded="false"><i class="fas fa-bed"></i><span
+                          class="hide-menu">Data Kamar </span></a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('minuman.index')}}" class="nav-link">
-                  <i class="fas fa-coffee nav-icon"></i>
-                  <p>Data Minuman</p>
-                </a>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+                  aria-expanded="false"><i class=" fab fa-black-tie"></i><span
+                      class="hide-menu">Data Pegawai</span></a>
               </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="fas fa-receipt nav-icon"></i>
-                  <p>Data Pesanan</p>
-                </a>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pengunjung.index')}}"
+                      aria-expanded="false"><i class=" fas fa-users"></i><span
+                          class="hide-menu">Data Pengunjung</span></a>
               </li>
-            </ul>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('kamar.index')}}">
-                  <i class="nav-icon fas fa-book-open"></i>
-                    <span class="menu-title">Data Reservasi</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('kamar.index')}}">
-                  <i class="nav-icon fas fa-money-bill-wave"></i>
-                    <span class="menu-title">Data Transaksi</span>
-              </a>
-            </li>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+                   aria-expanded="false"><i class=" far fa-file-alt"></i><span
+                      class="hide-menu">Data Reservasi</span></a>
+              </li>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+                  aria-expanded="false"><i class="far fa-money-bill-alt"></i><span
+                      class="hide-menu">Data Transaksi</span></a>
+              </li>
+              <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link " href="authentication-login1.html"
+                      aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+                          class="hide-menu">Logout</span></a>
+              </li>
+          </ul>
       </nav>
-      <!-- /.sidebar-menu -->
-    </div>
+      <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>

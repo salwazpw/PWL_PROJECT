@@ -37,7 +37,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID Pengunjung</th>
+                            <th scope="col">ID</th>
                             <th scope="col">NIK</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
@@ -58,7 +58,7 @@
                         <td>
                             <form action="{{ route('pengunjung.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('pengunjung.show', $data->id)}}"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-icons btn-warning" href="{{route('pengunjung.edit', $data->id)}}"><i class="fa fa-pen"></i></a>
+                                <a class="btn btn-icons btn-warning" href="{{route('pengunjung.edit', $data->id)}}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>

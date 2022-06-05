@@ -55,7 +55,7 @@
                         <td>
                             <form action="{{ route('kamar.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('kamar.show', $data->id)}}"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-icons btn-warning" href="{{route('kamar.edit', $data->id)}}"><i class="fa fa-pen"></i></a>
+                                <a class="btn btn-icons btn-warning" href="{{route('kamar.edit', $data->id)}}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>

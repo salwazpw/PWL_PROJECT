@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.index');
+    return view('layouts.dahsboard');
 });
-
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+});
 Route::resource('kamar',KamarController::class);
 Route::resource('makanan',MakananController::class);
 Route::resource('minuman',MinumanController::class);
