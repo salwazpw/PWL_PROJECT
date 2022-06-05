@@ -3,13 +3,10 @@
     Detail Data Pengunjung
 @endsection
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h5 class="card-header bg-yellow text-white">Detail Data Pengunjung</h5>
+<div class="mt-5 col-md-8 mx-auto">
+    <div class="card ">
+            <h5 class="card-header bg-primary text-white">Detail Data Pengunjung</h5>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

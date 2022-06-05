@@ -5,7 +5,7 @@
 @section('content')
     <div class="mt-5 col-md-8 mx-auto">
         <div class="card ">
-            <h5 class="card-header bg-orange text-white">Detail Data Makanan</h5>
+            <h5 class="card-header bg-primary text-white">Detail Data Makanan</h5>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
