@@ -3,13 +3,9 @@
     Edit Data Makanan | QUEEN Z
 @endsection
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h5 class="card-header bg-yellow text-white">Edit Data Makanan</h5>
+<div class="mt-5 col-md-8 mx-auto">
+        <div class="card ">
+            <h5 class="card-header bg-primary text-white">Edit Data Makanan</h5>
             <div class="card-body">
               @if ($errors->any())
               <div class="alert alert-danger">
@@ -42,7 +38,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="gambar_makanan">Gambar Makanan</label>
-                            <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="Gambar Makanan" name="gambar_makanan" required value="{{$makanan->gambar_makanan}}">
+                            <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="Gambar Makanan" name="gambar_makanan" required value="{{$makanan->gambar_makanan}}"><br>
                             <img width="150px" src="{{asset('storage/'. $makanan->gambar_makanan)}}" >
                           </div>
                     </div>
