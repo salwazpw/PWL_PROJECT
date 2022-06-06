@@ -25,12 +25,6 @@
                 <div class="col">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="id">ID Pengunjung</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ID" name="id" required value="{{$pengunjung->id}}">
-                          </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
                             <label for="nik">NIK</label>
                             <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="NIK" name="nik" required value="{{$pengunjung->nik}}">
                           </div>

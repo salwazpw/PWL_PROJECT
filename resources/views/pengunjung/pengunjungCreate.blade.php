@@ -22,11 +22,6 @@
               <form method="POST" enctype="multipart/form-data" action="{{route('pengunjung.store')}}">
                 @csrf
                 <div class="col-md-12 col-xs-12">
-                    <div class="form-group">
-                        <label for="id">ID Pengunjung</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ID" name="id" required>
-                      </div>
-                </div>
                     <div class="col-md-12 col-xs-12">
                         <div class="form-group">
                             <label for="nik">NIK</label>
