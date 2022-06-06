@@ -22,13 +22,7 @@
               <form method="POST" enctype="multipart/form-data"  action="{{route('makanan.update',$makanan->id)}}">
                 @csrf
                 @method('PUT')
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">ID</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ID" name="id" required value="{{$makanan->id}}">
-                          </div>
-                    </div>
+                <div class="col">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Makanan</label>

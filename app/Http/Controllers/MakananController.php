@@ -35,7 +35,6 @@ class MakananController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'id'=> 'required|string|max:10',
             'nama_makanan' => 'required|string',
             'gambar_makanan' => 'required',
             'harga' => 'required',
@@ -73,12 +72,10 @@ class MakananController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id'=> 'required|string|max:10',
             'nama_makanan' => 'required|string',
             'harga' => 'required|string',
         ]);
         $makanan = Makanan::where('id', $id)->first();
-        $makanan->id = $request->get('id');
         $makanan->nama_makanan = $request->get('nama_makanan');
         $image_name = $request->file('gambar_makanan')->store('images', 'public');
         $makanan->gambar_makanan = $image_name;

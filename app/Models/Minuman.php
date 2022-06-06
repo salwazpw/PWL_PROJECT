@@ -15,7 +15,6 @@ class Minuman extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id',
         'nama_minuman',
         'gambar_minuman',
         'harga'   

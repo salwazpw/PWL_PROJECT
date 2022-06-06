@@ -25,12 +25,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">ID</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ID" name="id" required value="{{$minuman->id}}">
-                          </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
                             <label for="exampleInputEmail1">Nama Minuman</label>
                             <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="nama_minuman" name="nama_minuman" required value="{{$minuman->nama_minuman}}">
                           </div>

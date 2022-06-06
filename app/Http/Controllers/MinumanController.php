@@ -35,7 +35,6 @@ class MinumanController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'id'=> 'required|string|max:10',
             'nama_minuman' => 'required|string',
             'gambar_minuman' => 'required',
             'harga' => 'required',
@@ -73,12 +72,10 @@ class MinumanController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id'=> 'required|string|max:10',
             'nama_minuman' => 'required|string',
             'harga' => 'required|string',
         ]);
         $minuman = Minuman::where('id', $id)->first();
-        $minuman->id = $request->get('id');
         $minuman->nama_minuman = $request->get('nama_minuman');
         $image_name = $request->file('gambar_minuman')->store('images', 'public');
         $minuman->gambar_minuman = $image_name;

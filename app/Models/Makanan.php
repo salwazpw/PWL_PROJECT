@@ -15,7 +15,6 @@ class Makanan extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id',
         'nama_makanan',
         'gambar_makanan',
         'harga'   
