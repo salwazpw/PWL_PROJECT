@@ -4,6 +4,7 @@ use App\Http\Controllers\KamarController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\MinumanController;
 use App\Http\Controllers\PengunjungController;
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,4 @@ Route::resource('kamar',KamarController::class);
 Route::resource('makanan',MakananController::class);
 Route::resource('minuman',MinumanController::class);
 Route::resource('pengunjung',PengunjungController::class);
+Route::resource('pegawai',PegawaiController::class);

@@ -31,7 +31,7 @@
                       aria-expanded="false"><i class="fas fa-bed"></i><span
                           class="hide-menu">Data Kamar </span></a>
               </li>
-              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pegawai.index')}}"
                   aria-expanded="false"><i class=" fab fa-black-tie"></i><span
                       class="hide-menu">Data Pegawai</span></a>
               </li>
