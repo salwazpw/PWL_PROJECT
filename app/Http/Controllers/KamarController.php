@@ -108,13 +108,11 @@ class KamarController extends Controller
     public function update(Request $request, $id)
     {
         $request -> validate([
-            'id'=> 'required|string|max:10',
             'tipe_kamar' => 'required|string',
             'harga' => 'required',
         ]);
 
         $kamar = Kamar::where('id', $id)->first();
-        $kamar->id = $request->get('id');
         $image_name = $request->file('foto_kamar')->store('images', 'public');
         $kamar->foto_kamar = $image_name;
         $kamar->harga = $request->get('harga');

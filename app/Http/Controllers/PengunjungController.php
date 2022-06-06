@@ -52,7 +52,6 @@ class PengunjungController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'id'=> 'required|string|max:10',
             'nik' => 'required|max:16',
             'nama' => 'required|string',
             'jenis_kelamin' => 'required',
@@ -106,7 +105,6 @@ class PengunjungController extends Controller
     public function update(Request $request, $id)
     {
         $request -> validate([
-            'id'=> 'required|string|max:10',
             'nik' => 'required|max:16',
             'nama' => 'required|string',
             'jenis_kelamin' => 'required',
@@ -114,7 +112,6 @@ class PengunjungController extends Controller
             'no_telp' => 'required|max:13',
         ]);
         $pengunjung = Pengunjung::where('id', $id)->first();
-        $pengunjung->id = $request->get('id');
         $pengunjung->nik = $request->get('nik');
         $pengunjung->nama = $request->get('nama');
         $pengunjung->jenis_kelamin = $request->get('jenis_kelamin');

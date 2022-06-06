@@ -22,6 +22,12 @@
               <form method="POST" enctype="multipart/form-data" action="{{route('kamar.store')}}">
                 @csrf
                 <div class="col-md-12 col-xs-12">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">No. Kamar</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="No Kamar" name="id" required>
+                      </div>
+                </div>
                     <div class="col-md-12 col-xs-12">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tipe Kamar</label>
