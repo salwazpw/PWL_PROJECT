@@ -19,4 +19,9 @@ class Kamar extends Model
         'foto_kamar',
         'harga',
     ];
+
+    public function pesanan()
+    {
+    	return $this->hasMany(Pesanan::class);
+    }
 }

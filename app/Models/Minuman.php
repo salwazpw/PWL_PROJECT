@@ -19,4 +19,9 @@ class Minuman extends Model
         'gambar_minuman',
         'harga'   
     ];
+
+    public function pesanan()
+    {
+    	return $this->hasMany(Pesanan::class);
+    }
 }

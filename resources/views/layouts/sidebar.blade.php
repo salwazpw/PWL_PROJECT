@@ -21,7 +21,7 @@
                                   class="hide-menu"> Data Minuman
                               </span></a>
                       </li>
-                      <li class="sidebar-item"><a href="#" class="sidebar-link"><span
+                      <li class="sidebar-item"><a href="{{route('pesanan.index')}}" class="sidebar-link"><span
                                   class="hide-menu"> Data Pesanan
                               </span></a>
                       </li>

@@ -20,4 +20,9 @@ class Makanan extends Model
         'harga'   
     ];
 
+    public function pesanan()
+    {
+    	return $this->hasMany(Pesanan::class);
+    }
+
 }
