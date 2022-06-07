@@ -34,18 +34,10 @@ class PesananController extends Controller
 
     public function create()
     {
-        $kamar = Kamar::get();
         $pesanan = Pesanan::get();
+        $kamar = Kamar::get();
         $makanan = Makanan::get();
         $minuman = Minuman::get();
-
-        // if($jumlah_makanan){
-        //     $pesanan->jumlah_makanan = $_GET['jumlah_makanan'];
-        //     $pesanan->jumlah_minuman = $_GET['jumlah_minuman'];
-        //     $makanan->harga = $_GET['harga'];
-        //     $minuman->harga = $_GET['harga'];
-        //     $pesanan->total_harga = ($pesanan->jumlah_makanan*$makanan->harga)+($pesanan->jumlah_minuman*$minuman->harga);
-        // }
 
         return view('pesanan.pesananCreate' ,['pesanan'=>$pesanan, 'kamar'=>$kamar, 'makanan'=>$makanan, 'minuman'=>$minuman]);
     }
@@ -102,7 +94,6 @@ class PesananController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required',
             'Kamar'=> 'required',
             'Makanan' => 'required',
             'jumlah_makanan' => 'required|max:3',
@@ -111,22 +102,21 @@ class PesananController extends Controller
             'total_harga' => 'required',
         ]);
 
-        $pesanan = new Pesanan();
-        $pesanan->id = $request->get('id');
+        $pesanan = Pesanan::with('kamar', 'makanan', 'minuman')->where('id', $id)->first();
         $pesanan->jumlah_makanan = $request->get('jumlah_makanan');
         $pesanan->jumlah_minuman = $request->get('jumlah_minuman');
         $pesanan->total_harga = $request->get('total_harga');
 
-        $kamar = new Kamar();
+        $kamar = new Kamar;
         $kamar->id = $request->get('Kamar');
 
-        $makanan = new Makanan();
+        $makanan = new Makanan;
         $makanan->id = $request->get('Makanan');
 
-        $minuman = new Minuman();
+        $minuman = new Minuman;
         $minuman->id = $request->get('Minuman');
         
-        $pesanan->makanan()->associate($kamar);
+        $pesanan->kamar()->associate($kamar);
         $pesanan->makanan()->associate($makanan);
         $pesanan->minuman()->associate($minuman);
         $pesanan->save();

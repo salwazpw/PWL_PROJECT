@@ -22,6 +22,10 @@
                             <input type="text" class="form-control" id="makanan_id" name="Makanan" value="{{$pesanan->makanan->nama_makanan}}" readonly>
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputPassword1">Harga Makanan</label>
+                            <input type="text" class="form-control" id="harga_makanan" value="{{$pesanan->makanan->harga}}" readonly>
+                        </div>
+                        <div class="form-group">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Jumlah Makanan</label>
                                 <input type="text" class="form-control" id="jumlah_makanan" name="jumlah_makanan" value="{{$pesanan->jumlah_makanan}}" readonly >
@@ -30,6 +34,10 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Menu Minuman</label>
                             <input type="text" class="form-control" id="minuman_id" name="Minuman" value="{{$pesanan->minuman->nama_minuman}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Harga Minuman</label>
+                            <input type="text" class="form-control" id="harga_minuman" value="{{$pesanan->minuman->harga}}" readonly>
                         </div>
                         <div class="form-group">
                             <div class="form-group">

@@ -45,8 +45,18 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Harga Makanan</label>
+                        <select type="number" class="form-control" id="harga_makanan" onkeyup="sum();">
+                            @foreach ($makanan as $data)
+                                <option value="{{ $data->harga }}" {{ $pesanan->makanan_id ? 'selected' : '' }}>{{ $data->nama_makanan }} - {{ $data->harga }}</option>
+                            @endforeach
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Jumlah Makanan</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Jumlah Makanan" name="jumlah_makanan" required value="{{$pesanan->jumlah_makanan}}"> 
+                            <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Jumlah Makanan" onkeyup="sum();"  id ="jumlah_makanan" name="jumlah_makanan" required value="{{$pesanan->jumlah_makanan}}"> 
                           </div>
                     </div>
                 <div class="col-md-6">
@@ -61,14 +71,24 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label>Harga Minuman</label>
+                    <select type="number" class="form-control" id="harga_minuman" onkeyup="sum();">
+                        @foreach ($minuman as $data)
+                            <option value="{{ $data->harga }}" {{ $pesanan->minuman_id ? 'selected' : '' }}>{{ $data->nama_minuman }} - {{ $data->harga }}</option>
+                        @endforeach
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="exampleInputEmail1">Jumlah Minuman</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Jumlah Minuman" name="jumlah_minuman" required value="{{$pesanan->jumlah_minuman}}"> 
+                        <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Jumlah Minuman" onkeyup="sum();"  id ="jumlah_minuman" name="jumlah_minuman" required value="{{$pesanan->jumlah_minuman}}"> 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Total Harga</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Total Harga" name="total_harga" required value="{{$pesanan->total_harga}}"> 
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Total Harga" onkeyup="sum();" id ="total_harga" name="total_harga" required value="{{$pesanan->total_harga}}" readonly> 
                       </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -78,4 +98,17 @@
          </div>
         </div>
     </div>
+
+    <script>
+        function sum(){
+          var txFirstNumberValue = document.getElementById('jumlah_makanan').value;
+          var txSecondNumberValue = document.getElementById('jumlah_minuman').value;
+          var txThirdNumberValue = document.getElementById('harga_makanan').value;
+          var txFourthNumberValue = document.getElementById('harga_minuman').value;
+          var result = (parseInt(txFirstNumberValue)*parseInt(txThirdNumberValue)) + (parseInt(txSecondNumberValue)*parseInt(txFourthNumberValue));
+          if(!isNaN(result)){
+            document.getElementById('total_harga').value = result;
+          }
+        }
+      </script>
 @endsection
