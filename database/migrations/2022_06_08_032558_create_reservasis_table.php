@@ -20,8 +20,8 @@ class CreateReservasisTable extends Migration
             $table->unsignedBigInteger('kamar_id')->nullable();
             $table->foreign('kamar_id')->references('id')->on('kamars');
             $table->date('tanggal_booking');
-            $table->date('tanggal_checkin');
-            $table->date('tanggal_checkout');
+            $table->string('tanggal_checkin');
+            $table->string('tanggal_checkout');
             $table->timestamps();
         });
     }

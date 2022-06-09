@@ -59,8 +59,8 @@ class ReservasiController extends Controller
             'Pengunjung'=> 'required',
             'Kamar'=> 'required',
             'tanggal_booking'=> 'required|date',
-            'tanggal_checkin'=> 'required|date',
-            'tanggal_checkout'=>'required|date',
+            'tanggal_checkin'=> 'required',
+            'tanggal_checkout'=>'required',
         ]);
 
         $reservasi = new Reservasi();
@@ -121,8 +121,8 @@ class ReservasiController extends Controller
             'Pengunjung'=> 'required',
             'Kamar'=> 'required',
             'tanggal_booking'=> 'required|date',
-            'tanggal_checkin'=> 'required|date',
-            'tanggal_checkout'=>'required|date'
+            'tanggal_checkin'=> 'required',
+            'tanggal_checkout'=>'required'
         ]);
 
         $reservasi = Reservasi::with('pengunjung', 'kamar')->where('id', $id)->first();;
