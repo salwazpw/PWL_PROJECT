@@ -7,6 +7,7 @@ use App\Models\Pengunjung;
 use App\Models\Reservasi;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class ReservasiController extends Controller
 {
@@ -155,5 +156,18 @@ class ReservasiController extends Controller
         Reservasi::find($id)->delete();
         return redirect()->route('reservasi.index')
             -> with('success', 'Reservasi Berhasil Dihapus');
+    }
+
+    public function reservasi($id){
+        
+        $reservasi = Reservasi::where('id', $id)->first();
+        return view('reservasi.reservasi',['reservasi' => $reservasi]);
+
+    }
+
+    public function cetak_pdf($id){
+        $reservasi = Reservasi::where('id', $id)->first();
+        $pdf = PDF::loadview('reservasi.reservasiPdf',['reservasi'=>$reservasi]);
+        return $pdf->stream();
     }
 }
