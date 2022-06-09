@@ -27,19 +27,19 @@
                   <div class="navbar-brand">
                       <!-- Logo icon -->
                       <a href="index.html">
-                          <b class="logo-icon">
+                          <!-- <b class="logo-icon"> -->
                               <!-- Dark Logo icon -->
-                              <img src="{{asset('templatee/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+                              <!-- <img src="{{asset('templatee/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" /> -->
                               <!-- Light Logo icon -->
-                              <img src="{{asset('templatee/assets/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
-                          </b>
+                              <!-- <img src="{{asset('templatee/assets/images/logo-icon.png')}}" alt="homepage" class="light-logo" /> -->
+                          <!-- </b> -->
                           <!--End Logo icon -->
                           <!-- Logo text -->
                           <span class="logo-text">
                               <!-- dark Logo text -->
-                              <img src="{{asset('templatee/assets/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
+                              <img src="{{asset('templatee/assets/images/logo1.png')}}" alt="homepage" class="dark-logo" />
                               <!-- Light Logo text -->
-                              <img src="{{asset('templatee/assets/images/logo-light-text.png')}}" class="light-logo" alt="homepage" />
+                              <img src="{{asset('templatee/assets/images/logo1.png')}}" class="light-logo" alt="homepage" />
                           </span>
                       </a>
                   </div>
