@@ -35,3 +35,5 @@ Route::resource('pengunjung',PengunjungController::class);
 Route::resource('pegawai',PegawaiController::class);
 Route::resource('reservasi',ReservasiController::class);
 Route::resource('transaksi',TransaksiController::class);
+Route::get('pesanans/cetak_pdf', [PesananController::class, 'cetak_pdf']);
+Route::get('transaksis/cetak_pdf', [TransaksiController::class, 'cetak_pdf']);
