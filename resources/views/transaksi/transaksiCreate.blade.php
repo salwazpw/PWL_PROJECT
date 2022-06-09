@@ -46,7 +46,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">ID Pengunjung</label>
                       <select class="form-control" id="pengunjung_id" name="Pengunjung">
-                          @foreach ($kamar as $data)
+                          @foreach ($pengunjung as $data)
                               <option value="{{ $data->id }}">{{ $data->id }}</option>
                           @endforeach
                       </select>
