@@ -24,4 +24,9 @@ class Kamar extends Model
     {
     	return $this->hasMany(Pesanan::class);
     }
+
+    public function reservasi()
+    {
+    	return $this->hasMany(Reservasi::class);
+    }
 }

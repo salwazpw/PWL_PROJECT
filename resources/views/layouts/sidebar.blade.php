@@ -39,7 +39,7 @@
                       aria-expanded="false"><i class=" fas fa-users"></i><span
                           class="hide-menu">Data Pengunjung</span></a>
               </li>
-              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('reservasi.index')}}"
                    aria-expanded="false"><i class=" far fa-file-alt"></i><span
                       class="hide-menu">Data Reservasi</span></a>
               </li>

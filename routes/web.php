@@ -6,6 +6,7 @@ use App\Http\Controllers\MinumanController;
 use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ReservasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,4 @@ Route::resource('minuman',MinumanController::class);
 Route::resource('pesanan',PesananController::class);
 Route::resource('pengunjung',PengunjungController::class);
 Route::resource('pegawai',PegawaiController::class);
+Route::resource('reservasi',ReservasiController::class);

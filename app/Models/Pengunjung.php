@@ -18,4 +18,9 @@ class Pengunjung extends Model
         'alamat',
         'no_telp',
     ];
+
+    public function reservasi()
+    {
+    	return $this->hasMany(Reservasi::class);
+    }
 }
