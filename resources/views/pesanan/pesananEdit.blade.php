@@ -25,7 +25,7 @@
                 <div class="col">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="Kamar">No. Makanan</label>
+                            <label for="Kamar">No. Kamar</label>
                         <select name="Kamar" class="form-control">
                             @foreach ($kamar as $data)
                                 <option value="{{ $data->id }}" {{ $pesanan->kamar_id ? 'selected' : '' }}>{{ $data->id }}</option>
