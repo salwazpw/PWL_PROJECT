@@ -43,7 +43,7 @@
                    aria-expanded="false"><i class=" far fa-file-alt"></i><span
                       class="hide-menu">Data Reservasi</span></a>
               </li>
-              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="javascript:void(0)"
+              <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaksi.index')}}"
                   aria-expanded="false"><i class="far fa-money-bill-alt"></i><span
                       class="hide-menu">Data Transaksi</span></a>
               </li>

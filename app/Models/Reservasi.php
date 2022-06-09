@@ -38,4 +38,9 @@ class Reservasi extends Model
     {
     	return $this->belongsTo(Kamar::class);
     }
+
+    public function transaksi()
+    {
+    	return $this->hasMany(Transaksi::class);
+    }
 }

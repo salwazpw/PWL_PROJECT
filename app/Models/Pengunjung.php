@@ -23,4 +23,9 @@ class Pengunjung extends Model
     {
     	return $this->hasMany(Reservasi::class);
     }
+
+    public function transaksi()
+    {
+    	return $this->hasMany(Transaksi::class);
+    }
 }
