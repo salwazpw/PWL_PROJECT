@@ -51,7 +51,7 @@
                             <label for="exampleInputPassword1">Jenis Kelamin</label>
                             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                                 <option value="P">Perempuan</option>
-                                <option value="L">Laki</option>
+                                <option value="L">Laki Laki</option>
                             </select>
                         </div>
                     </div>

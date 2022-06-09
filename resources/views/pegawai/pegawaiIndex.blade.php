@@ -61,7 +61,7 @@
                         <td>{{$data->tanggal_lahir}}</td>                       
                         <td>{{$data->no_telp}}</td>
                         <td>{{$data->jabatan}}</td>
-                        <td>{{$data->gaji}}</td>
+                        <td>Rp. {{number_format($data->gaji, 0, ",", ".")}}</td>
                         <td>
                             <form action="{{ route('pegawai.destroy',  $data->nip) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('pegawai.show', $data->nip)}}"><i class="fa fa-eye"></i></a>
