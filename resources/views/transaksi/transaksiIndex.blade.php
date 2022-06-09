@@ -66,6 +66,7 @@
                             <form action="{{ route('transaksi.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('transaksi.show', $data->id)}}"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-icons btn-warning" href="{{route('transaksi.edit', $data->id)}}"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-icons btn-light" href="{{route('payment', $data->id)}}"><i class="fas fa-print"></i></a>
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>

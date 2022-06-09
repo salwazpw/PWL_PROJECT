@@ -9,6 +9,7 @@ use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 
 class TransaksiController extends Controller
@@ -131,5 +132,18 @@ class TransaksiController extends Controller
         Transaksi::find($id)->delete();
         return redirect()->route('transaksi.index')
             -> with('success', 'Transaksi Berhasil Dihapus');
+    }
+
+    public function transaksi($id){
+        
+        $transaksi = Transaksi::where('id', $id)->first();
+        return view('transaksi.transaksi', ['transaksi' => $transaksi]);
+
+    }
+
+    public function cetak_pdf($id){
+        $transaksi = Transaksi::where('id', $id)->first();
+        $pdf = PDF::loadview('transaksi.transaksi_pdf',['transaksi'=>$transaksi]);
+        return $pdf->stream();
     }
 }
