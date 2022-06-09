@@ -35,5 +35,8 @@ Route::resource('pengunjung',PengunjungController::class);
 Route::resource('pegawai',PegawaiController::class);
 Route::resource('reservasi',ReservasiController::class);
 Route::resource('transaksi',TransaksiController::class);
-Route::get('pesanans/cetak_pdf', [PesananController::class, 'cetak_pdf']);
-Route::get('transaksis/cetak_pdf', [TransaksiController::class, 'cetak_pdf']);
+Route::get('pesanans/cetak_pdf/{pesanan}', [PesananController::class, 'cetak_pdf'])->name('cetakpdf');
+Route::get('transaksis/cetak_pdf/{transaksi}', [TransaksiController::class, 'cetak_pdf'])->name('cetak_pdf');
+Route::get('order/{pesanan}', [PesananController::class, 'pesanan'])->name('order');
+Route::get('payment/{pesanan}', [TransaksiController::class, 'pesanan'])->name('payment');
+

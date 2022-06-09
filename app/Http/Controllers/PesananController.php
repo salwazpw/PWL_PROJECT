@@ -9,6 +9,7 @@ use App\Models\Pesanan;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class PesananController extends Controller
 {
@@ -130,5 +131,18 @@ class PesananController extends Controller
         Pesanan::find($id)->delete();
         return redirect()->route('pesanan.index')
             -> with('success', 'Pesanan Berhasil Dihapus');
+    }
+
+    public function pesanan($id){
+        
+        $pesanan = Pesanan::where('id', $id)->first();
+        return view('pesanan.pesanan',['pesanan' => $pesanan]);
+
+    }
+
+    public function cetak_pdf($id){
+        $pesanan = Pesanan::where('id', $id)->first();
+        $pdf = PDF::loadview('pesanan.pesananPdf',['pesanan'=>$pesanan]);
+        return $pdf->stream();
     }
 }
