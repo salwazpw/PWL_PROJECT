@@ -18,6 +18,12 @@
 
             <table style="align-content:center;">
 
+                <tr>
+                    <td>Tanggal Transaksi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->tanggal_transaksi}}</td>
+                </tr>
+
                 <td colspan="4">----------------------------------------------------------------------------------------------------------------</td>
 
                 <tr>
@@ -51,11 +57,7 @@
                     <td>{{$transaksi->reservasi->jumlah}}</td>
                 </tr>
 
-                <tr>
-                    <td>Tanggal Transaksi</td>
-                    <td>:</td>
-                    <td>{{$transaksi->tanggal_transaksi}}</td>
-                </tr>
+                
 
                 <tr>
                     <td>Harga Kamar</td>
@@ -77,7 +79,7 @@
                     <td style="padding-left: 300px">Rp. {{number_format($transaksi->total_harga, 0, ",", ".")}}</td>
                 </tr>
 
-                <td colspan="4">----------------------------------------------------------------------------------------------------------------</td>
+                <td colspan="4">==================================================================</td>
             </table>
             <br><br><br>
         <center>
