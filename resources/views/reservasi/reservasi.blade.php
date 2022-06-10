@@ -4,19 +4,60 @@
 @endsection
 @section('content')
     <div class="container mt-3">
-        <h3 class="text-center mb-5">QUEEN Z HOTEL</h3>
-        <h2 class="text-center mb-4">DATA RESERVASI</h2>
+        <html>
 
-        <br><br><br>
+        <head >
+            <h1>
+            <center><font face="Courier New" size="5">ROOM RESERVATION QUEEN Z HOTEL</font></center>
+            </h1>
+        </head>
+        <body>
+            <font face="Courier New" />
 
-        <b>ID Reservasi   :</b> {{$reservasi->id}}<br>
-        <b>ID Pengunjung     : </b>{{$reservasi->pengunjung->id}}<br>
+            <table align="center">
 
-        <h5>No Kamar    :{{$reservasi->kamar->id }}</h1>
-        <h5>Tanggal Booking :{{$reservasi->tanggal_booking}}</h5>
-        <h5>Tanggal Check In  :{{$reservasi->tanggal_checkin}}</h5>
-        <h5>Tanggal Check Out :{{$reservasi->tanggal_checkin}}</h5>
-        
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>ID Reservasi</td>
+                    <td>:</td>
+                    <td>{{ $reservasi->id }}</td>
+                </tr>
+
+                <tr>
+                    <td>Nama Pengunjung</td>
+                    <td>:</td>
+                    <td>{{ $reservasi->pengunjung->nama }}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>Tanggal Booking</td>
+                    <td>:</td>
+                    <td>{{ $reservasi->tanggal_booking }}</td>
+                </tr>
+
+                <tr>
+                    <td>Tanggal Check In</td>
+                    <td>:</td>
+                    <td>{{ $reservasi->tanggal_checkin }}</td>
+                </tr>
+
+                <tr>
+                    <td>Tanggal Check Out</td>
+                    <td>:</td>
+                    <td>{{ $reservasi->tanggal_checkout }}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+            </table>
+        </body>
+
+        </html>
     </div>
-    <center><a class="btn btn-icons btn-light" target="_blank" href="{{ route('pdfcetak', $reservasi->id) }}"><i class="fas fa-print"></i> Cetak Ke PDF </a></center>
+
+    <br><br>
+    <center><a class="btn btn-icons btn-warning" target="_blank" href="{{ route('pdfcetak', $reservasi->id) }}"><i class="fas fa-print"></i> Cetak Nota Reservasi </a></center>
 @endsection
