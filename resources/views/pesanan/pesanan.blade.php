@@ -1,25 +1,89 @@
 @extends('layouts.main')
 @section('title')
-    Detail Data Pesanan
+    Cetak Data Pesanan
 @endsection
 @section('content')
     <div class="container mt-3">
-        <h3 class="text-center mb-5">QUEEN Z HOTEL</h3>
-        <h2 class="text-center mb-4">DATA PESANAN</h2>
+        <html>
 
-        <br><br><br>
+        <head >
+            <h1>
+            <center><font face="Courier New" size="5">CATERING HOTEL QUEEN Z</font></center>
+            </h1>
+        </head>
+        <body>
+            <font face="Courier New" />
 
-        <b>ID Pesanan   :</b> {{$pesanan->id}}<br>
-        <b>No Kamar     : </b>{{$pesanan->kamar->id}}<br>
+            <table align="center">
 
-        <h5>Menu Makanan    :{{$pesanan->makanan->nama_makanan }}</h1>
-        <h5>Harga Makanan   :{{$pesanan->makanan->harga}}</h5>
-        <h5>Jumlah Makanan  :{{$pesanan->minuman->nama_minuman }}</h5>
-        <h5>Menu Minuman    :{{$pesanan->minuman->harga}}</h5>
-        <h5>Harga Minuman   :{{$pesanan->total_harga}}</h5>
-        <h5>Jumlah Minuman  :{{$pesanan->jumlah_minuman}}</h5>
-        <h5>Total Harga     :{{$pesanan->total_harga}}</h5>
-        
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>ID Pesanan</td>
+                    <td>:</td>
+                    <td>{{ $pesanan->id }}</td>
+                </tr>
+
+                <tr>
+                    <td>No Kamar</td>
+                    <td>:</td>
+                    <td>{{ $pesanan->kamar->id }}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>Menu Makanan</td>
+                    <td>:</td>
+                    <td>{{ $pesanan->makanan->nama_makanan }}</td>
+                </tr>
+
+                <tr>
+                    <td>Menu Minuman</td>
+                    <td>:</td>
+                    <td>{{ $pesanan->minuman->nama_minuman }}</td>
+                </tr>
+
+                <tr>
+                    <td>Jumlah Makanan</td>
+                    <td>:</td>
+                    <td>{{$pesanan->jumlah_makanan}}</td>
+                </tr>
+
+                <tr>
+                    <td>Jumlah Minuman</td>
+                    <td>:</td>
+                    <td>{{$pesanan->jumlah_minuman}}</td>
+                </tr>
+
+                <tr>
+                    <td>Harga Makanan</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($pesanan->makanan->harga , 0, ",", ".")}} * {{$pesanan->jumlah_makanan}}</td>
+                </tr>
+
+                <tr>
+                    <td>Harga Minuman</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($pesanan->minuman->harga , 0, ",", ".")}}  * {{$pesanan->jumlah_minuman}}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------ (+)</td>
+
+                <tr>
+                    <td>Total Harga</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($pesanan->total_harga, 0, ",", ".")}}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+            </table>
+        </body>
+
+        </html>
     </div>
-    <center><a class="btn btn-danger" href="{{ route('cetakpdf', $pesanan->id) }}"> Cetak Ke PDF</a></center>
+
+    <br><br>
+    <center><a class="btn btn-icons btn-warning" target="_blank" href="{{ route('cetakpdf', $pesanan->id) }}"><i class="fas fa-print"></i> Cetak Nota Pesanan </a></center>
 @endsection
