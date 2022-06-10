@@ -1,25 +1,89 @@
 @extends('layouts.main')
 @section('title')
-    Cetak Data Transaksi
+    Print Data Transaksi
 @endsection
 @section('content')
     <div class="container mt-3">
-        <h3 class="text-center mb-5">QUEEN Z HOTEL</h3>
-        <h2 class="text-center mb-4">DATA PESANAN</h2>
+        <html>
 
-        <br><br><br>
+        <head >
+            <h1>
+            <center><font face="Courier New" size="5">TRANSAKSI HOTEL QUEEN Z</font></center>
+            </h1>
+        </head>
+        <body>
+            <font face="Courier New" />
 
-        <b>ID Transaksi         :</b> {{$transaksi->id}}<br>
-        <b>ID Reservasi         : </b>{{$transaksi->reservasi->id}}<br>
+            <table align="center">
 
-        <h5>ID Pengunjung       :{{$transaksi->pengunjung->id }}</h1>
-        <h5>No. Kamar           :{{$transaksi->kamar->id }}</h5>
-        <h5>Harga Kamar         :{{$transaksi->kamar->harga }}</h5>
-        <h5>Jumlah Hari         :{{$transaksi->reservasi->jumlah}}</h5>
-        <h5>Tanggal Transaksi   :{{$transaksi->tanggal_transaksi}}</h5>
-        <h5>Biaya Admin         :{{$transaksi->biaya_admin}}</h5>
-        <h5>Total Harga         :{{$transaksi->total_harga}}</h5>
-        
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>ID Transaksi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->id}}</td>
+                </tr>
+
+                <tr>
+                    <td>ID Reservasi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->reservasi->id}}</td>
+                </tr>
+
+                <tr>
+                    <td>No. Kamar</td>
+                    <td>:</td>
+                    <td>{{$transaksi->kamar->id }}</td>
+                </tr>
+
+                <tr>
+                    <td>ID Pengunjung</td>
+                    <td>:</td>
+                    <td>{{$transaksi->pengunjung->id }}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+                <tr>
+                    <td>Jumlah Hari</td>
+                    <td>:</td>
+                    <td>{{$transaksi->reservasi->jumlah}}</td>
+                </tr>
+
+                <tr>
+                    <td>Tanggal Transaksi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->tanggal_transaksi}}</td>
+                </tr>
+
+                <tr>
+                    <td>Harga Kamar</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($transaksi->kamar->harga, 0, ",", ".")}} * {{$transaksi->reservasi->jumlah}}</td>
+                </tr>
+
+                <tr>
+                    <td>Biaya Admin</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($transaksi->biaya_admin, 0, ",", ".")}}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------ (+)</td>
+
+                <tr>
+                    <td>Total Harga</td>
+                    <td>:</td>
+                    <td style="padding-left: 180px">Rp. {{number_format($transaksi->total_harga, 0, ",", ".")}}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------</td>
+
+            </table>
+        </body>
+
+        </html>
     </div>
-    <center><a class="btn btn-icons btn-light" target="_blank" href="{{ route('cetak_pdf', $transaksi->id) }}"><i class="fas fa-print"></i> Cetak Ke PDF </a></center>
+
+    <br><br>
+    <center><a class="btn btn-icons btn-warning" target="_blank" href="{{ route('cetak_pdf', $transaksi->id) }}"><i class="fas fa-print"></i> Cetak Nota Transaksi </a></center>
 @endsection

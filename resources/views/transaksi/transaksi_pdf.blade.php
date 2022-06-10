@@ -2,24 +2,88 @@
 <html>
 
 <head>
-    <title>Laporan Transaksi</title>
+    <title>Data Transaksi ID : {{$transaksi->id}}</title>
+    <h1>
+        <center><font face="Courier New" size="5">TRANSAKSI QUEEN Z HOTEL</font></center>
+    </h1>
 </head>
 
 <body>
-<div class="container mt-3">
-        <h3 class="text-center mb-5" align = "center" >QUEEN Z</h3>
+        <center><p>Jl. Raden Panji Suroso No.7, Purwodadi, Kec. Blimbing</p>
+        <p>Kota Malang, Jawa Timur 65126</p>
+        <p>Telp: (0341) - 3300000</p></center>
 
-        <b>ID Transaksi         :</b> {{$transaksi->id}}<br>
-        <b>ID Reservasi         : </b>{{$transaksi->reservasi->id}}<br>
+        <br>
+<font face="Courier New">
 
-        <h5>ID Pengunjung       :{{$transaksi->pengunjung->id }}</h1>
-        <h5>No. Kamar           :{{$transaksi->kamar->id }}</h5>
-        <h5>Harga Kamar         :{{$transaksi->kamar->harga }}</h5>
-        <h5>Jumlah Hari         :{{$transaksi->reservasi->jumlah}}</h5>
-        <h5>Tanggal Transaksi   :{{$transaksi->tanggal_transaksi}}</h5>
-        <h5>Biaya Admin         :{{$transaksi->biaya_admin}}</h5>
-        <h5>Total Harga         :{{$transaksi->total_harga}}</h5>
-        
+            <table style="align-content:center;">
+
+                <td colspan="4">----------------------------------------------------------------------------------------------------------------</td>
+
+                <tr>
+                    <td>ID Transaksi</td>
+                    <td style="width: 20px;">:</td>
+                    <td>{{$transaksi->id}}</td>
+                </tr>
+
+                <tr>
+                    <td>ID Reservasi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->reservasi->id}}</td>
+                </tr>
+
+                <tr>
+                    <td>No. Kamar</td>
+                    <td>:</td>
+                    <td>{{$transaksi->kamar->id }}</td>
+                </tr>
+
+                <tr>
+                    <td>ID Pengunjung</td>
+                    <td>:</td>
+                    <td>{{$transaksi->pengunjung->id }}</td>
+                </tr>
+
+                <td colspan="4">----------------------------------------------------------------------------------------------------------------</td>
+                <tr>
+                    <td>Jumlah Hari</td>
+                    <td>:</td>
+                    <td>{{$transaksi->reservasi->jumlah}}</td>
+                </tr>
+
+                <tr>
+                    <td>Tanggal Transaksi</td>
+                    <td>:</td>
+                    <td>{{$transaksi->tanggal_transaksi}}</td>
+                </tr>
+
+                <tr>
+                    <td>Harga Kamar</td>
+                    <td>:</td>
+                    <td style="padding-left: 300px; width: 150px;">Rp. {{number_format($transaksi->kamar->harga, 0, ",", ".")}} * {{$transaksi->reservasi->jumlah}}</td>
+                </tr>
+
+                <tr>
+                    <td>Biaya Admin</td>
+                    <td>:</td>
+                    <td style="padding-left: 300px">Rp. {{number_format($transaksi->biaya_admin, 0, ",", ".")}}</td>
+                </tr>
+
+                <td colspan="4">------------------------------------------------------------------------------------------------------------ (+)</td>
+
+                <tr>
+                    <td>Total Harga</td>
+                    <td>:</td>
+                    <td style="padding-left: 300px">Rp. {{number_format($transaksi->total_harga, 0, ",", ".")}}</td>
+                </tr>
+
+                <td colspan="4">----------------------------------------------------------------------------------------------------------------</td>
+            </table>
+            <br><br><br>
+        <center>
+            <p>***Thank you so much for your loyalty and understanding towards our hotel***</p>
+            <p>Email: Queenz@gmail.com</p>
+        </center>
 </body>
 
 </html>

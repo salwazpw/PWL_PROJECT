@@ -54,10 +54,10 @@
                   </div>
                   <div class="col-md-12 col-xs-12">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Tipe Kamar - Harga Kamar</label>
+                        <label for="exampleInputEmail1">Harga Kamar</label>
                         <select type="number" class="form-control" id="harga_kamar" onkeyup="sum();">
                           @foreach ($kamar as $data)
-                              <option value="{{ $data->harga}}">{{ $data->tipe_kamar }} - {{ $data->harga }}</option>
+                              <option value="{{ $data->harga}}">{{ $data->id }} - {{ $data->harga }}</option>
                           @endforeach
                       </select>
                     </div>
