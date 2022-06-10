@@ -8,7 +8,7 @@
 
         <head >
             <h1>
-            <center><font face="Courier New" size="5">CATERING HOTEL QUEEN Z</font></center>
+            <center><font face="Courier New" size="5">CATERING QUEEN Z HOTEL </font></center>
             </h1>
         </head>
         <body>

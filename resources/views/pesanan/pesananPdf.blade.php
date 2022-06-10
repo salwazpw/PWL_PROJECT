@@ -6,7 +6,7 @@
 
     <body>
 
-        <center><h1><font size="5">CATERING HOTEL QUEEN Z</font></h1>
+        <center><h1><font size="5">CATERING QUEEN Z HOTEL</font></h1>
         <p>Jl. Raden Panji Suroso No.7, Purwodadi, Kec. Blimbing</p>
         <p>Kota Malang, Jawa Timur 65126</p>
         <p>Telp: (0341) - 3300000</p></center>
