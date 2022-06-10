@@ -44,7 +44,7 @@
                             <th scope="col">Jumlah Makanan</th>
                             <th scope="col">Nama Minuman</th>
                             <th scope="col">Jumlah Minuman</th>
-                            <th scope="col">Total Harga</th>
+                            <th scope="col" width="200px">Total Harga</th>
                             <th scope="col" width="200px">Aksi</th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@
                         <td>{{$data->jumlah_makanan}}</td>
                         <td>{{$data->minuman->nama_minuman }}</td>
                         <td>{{$data->jumlah_minuman}}</td>
-                        <td>{{$data->total_harga}}</td>
+                        <td>Rp. {{number_format($data->total_harga, 0, ",", ".")}}</td>
                         <td>
                             <form action="{{ route('pesanan.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('pesanan.show', $data->id)}}"><i class="fa fa-eye"></i></a>
