@@ -31,10 +31,12 @@
                       aria-expanded="false"><i class="fas fa-bed"></i><span
                           class="hide-menu">Data Kamar </span></a>
               </li>
+              @if (auth()->user()->level=="admin")
               <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pegawai.index')}}"
                   aria-expanded="false"><i class=" fab fa-black-tie"></i><span
                       class="hide-menu">Data Pegawai</span></a>
               </li>
+              @endif
               <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('pengunjung.index')}}"
                       aria-expanded="false"><i class=" fas fa-users"></i><span
                           class="hide-menu">Data Pengunjung</span></a>
@@ -43,10 +45,12 @@
                    aria-expanded="false"><i class=" far fa-file-alt"></i><span
                       class="hide-menu">Data Reservasi</span></a>
               </li>
+              @if (auth()->user()->level=="admin")
               <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('transaksi.index')}}"
                   aria-expanded="false"><i class="far fa-money-bill-alt"></i><span
                       class="hide-menu">Data Transaksi</span></a>
               </li>
+              @endif
               <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
               <li class="sidebar-item"> <a class="sidebar-link sidebar-link " href="{{route('logout')}}"
                       aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span

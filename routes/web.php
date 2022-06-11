@@ -39,13 +39,16 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin,user']], function(){
     Route::resource('minuman',MinumanController::class);
     Route::resource('pesanan',PesananController::class);
     Route::resource('pengunjung',PengunjungController::class);
-    Route::resource('pegawai',PegawaiController::class);
     Route::resource('reservasi',ReservasiController::class);
-    Route::resource('transaksi',TransaksiController::class);
     Route::get('pesanans/cetak_pdf/{pesanan}', [PesananController::class, 'cetak_pdf'])->name('cetakpdf');
     Route::get('transaksis/cetak_pdf/{transaksi}', [TransaksiController::class, 'cetak_pdf'])->name('cetak_pdf');
     Route::get('reservasis/cetak_pdf/{reservasi}', [ReservasiController::class, 'cetak_pdf'])->name('pdfcetak');
     Route::get('order/{pesanan}', [PesananController::class, 'pesanan'])->name('order');
     Route::get('payment/{transaksi}', [TransaksiController::class, 'transaksi'])->name('payment');
     Route::get('reserv/{reservasi}', [ReservasiController::class, 'reservasi'])->name('reserv');
+});
+
+Route::group(['middleware' => ['auth', 'CekLevel:admin']], function(){
+    Route::resource('pegawai',PegawaiController::class);
+    Route::resource('transaksi',TransaksiController::class);
 });
