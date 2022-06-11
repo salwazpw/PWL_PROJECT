@@ -22,9 +22,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('postlogin', [LoginController::class, 'postLogin'])->name('postLogin');
+Route::get('registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
+Route::post('postregistrasi', [LoginController::class, 'postRegistrasi'])->name('postregistrasi');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth', 'CekLevel:admin,user']], function(){

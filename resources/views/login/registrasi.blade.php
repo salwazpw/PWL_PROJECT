@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('templatee/assets/images/favicon.png')}}">
-    <title>Login - Queen Z Hotel </title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('templatee//assets/images/favicon.png')}}">
+    <title>Registrasi - Queen Z Hotel </title>
     <!-- Custom CSS -->
     <link href="{{asset('templatee/dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,41 +40,43 @@
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url({{asset('templatee/assets/images/big/11.jpg')}}) no-repeat center center;">
-            <div class="auth-box row">
+            <div class="auth-box row text-center">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url({{asset('templatee/assets/images/big/10.jpg')}});">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
-                        <div class="text-center">
-                            <img src="{{asset('templatee/assets/images/big/icon.png')}}" alt="wrapkit">
-                        </div>
-                        <h2 class="mt-3 text-center">Sign In</h2>
-                        <p class="text-center">Enter your username and password to Queen Z Hotel Website.</p>
-                        <form action="{{route('postLogin')}}" method="post" class="mt-4">
+                        <img src="{{asset('templatee/assets/images/big/icon.png')}}" alt="wrapkit">
+                        <h2 class="mt-3 text-center">Sign Up for Free</h2>
+                        <form action="{{route('postregistrasi')}}" method="post">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="uname">Username</label>
-                                        <input class="form-control" name="username" id="username" type="text"
-                                            placeholder="enter your username">
+                                        <input class="form-control" type="text" placeholder="your name" name="name" id="name">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="password">Password</label>
-                                        <input class="form-control" name="password" id="password" type="password"
-                                            placeholder="enter your password">
+                                        <input class="form-control" type="text" placeholder="your username" name="username" id="username">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" placeholder="email address" name="email" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" placeholder="password" name="password" id="password">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-block btn-dark">Sign In</button>
-                                </div>
-                                <div class="col-lg-12 text-center mt-5">
-                                    Don't have an account? <a href="{{route('registrasi')}}" class="text-danger">Sign Up</a>
+                                    <button type="submit" class="btn btn-block btn-dark">Sign Up</button>
                                 </div>
                             </div>
                         </form>
+                        <div class="col-lg-12 text-center mt-5">Already have an account? <a href="{{route('login')}}" class="text-danger"> <br>Sign In</a>
+                        </div>
                     </div>
                 </div>
             </div>
