@@ -9,8 +9,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Minuman</h1><br>
+            <h1 class="m-0">Menu Minuman</h1><br>
+            @if (auth()->user()->level=="admin")
             <h3> <a class="btn btn-success" href="{{route('minuman.create')}}">+ Tambah Data</a></h3>
+            @endif
           </div><!-- /.col -->
             <div class="col-md-6"><br><br><br>
                 <div class="float-right">

@@ -14,11 +14,11 @@
                           class="hide-menu">Catering </span></a>
                   <ul aria-expanded="false" class="collapse  first-level base-level-line">
                       <li class="sidebar-item"><a href="{{route('makanan.index')}}" class="sidebar-link"><span
-                                  class="hide-menu"> Data Makanan
+                                  class="hide-menu"> Menu Makanan
                               </span></a>
                       </li>
                       <li class="sidebar-item"><a href="{{route('minuman.index')}}" class="sidebar-link"><span
-                                  class="hide-menu"> Data Minuman
+                                  class="hide-menu"> Menu Minuman
                               </span></a>
                       </li>
                       <li class="sidebar-item"><a href="{{route('pesanan.index')}}" class="sidebar-link"><span
