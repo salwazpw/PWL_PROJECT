@@ -42,7 +42,9 @@
                             <th scope="col">Tipe Kamar</th>
                             <th scope="col">Foto Kamar</th>
                             <th scope="col">Harga</th>
+                            @if (auth()->user()->level=="admin")
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +54,7 @@
                         <td>{{$data->tipe_kamar}}</td>
                         <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->foto_kamar) }}"></td>
                         <td>Rp. {{number_format($data->harga, 0, ",", ".")}}</td>
+                        @if (auth()->user()->level=="admin")
                         <td>
                             <form action="{{ route('kamar.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('kamar.show', $data->id)}}"><i class="fa fa-eye"></i></a>
@@ -61,6 +64,7 @@
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                         @endforeach
                     </tbody>

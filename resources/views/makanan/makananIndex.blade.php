@@ -42,7 +42,9 @@
                             <th scope="col">Nama Makanan</th>
                             <th scope="col">Gambar Kamar</th>
                             <th scope="col">Harga</th>
+                            @if (auth()->user()->level=="admin")
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +55,7 @@
                         <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->gambar_makanan) }}"></td>
                         <td>Rp. {{number_format($data->harga, 0, ",", ".")}}</td>
                         <td>
+                        @if (auth()->user()->level=="admin")
                             <form action="{{ route('makanan.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('makanan.show', $data->id)}}"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-icons btn-warning" href="{{route('makanan.edit', $data->id)}}"><i class="fa fa-edit"></i></a>
@@ -61,6 +64,7 @@
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                         @endforeach
                     </tbody>

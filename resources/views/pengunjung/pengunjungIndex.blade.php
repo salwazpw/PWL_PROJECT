@@ -43,7 +43,9 @@
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Alamat</th>
                             <th scope="col">No Telepon</th>
+                            @if (auth()->user()->level=="admin")
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -55,6 +57,7 @@
                         <td>{{$data->jenis_kelamin}}</td>
                         <td>{{$data->alamat}}</td>
                         <td>{{$data->no_telp}}</td>
+                        @if (auth()->user()->level=="admin")
                         <td>
                             <form action="{{ route('pengunjung.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('pengunjung.show', $data->id)}}"><i class="fa fa-eye"></i></a>
@@ -64,6 +67,7 @@
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                         @endforeach
                     </tbody>

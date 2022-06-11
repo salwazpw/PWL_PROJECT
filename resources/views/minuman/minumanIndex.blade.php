@@ -42,7 +42,9 @@
                             <th scope="col">Nama Minuman</th>
                             <th scope="col">Gambar Minuman</th>
                             <th scope="col">Harga</th>
+                            @if (auth()->user()->level=="admin")
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +54,7 @@
                         <td>{{$data->nama_minuman}}</td>
                         <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->gambar_minuman) }}"></td>
                         <td>Rp. {{number_format($data->harga, 0, ",", ".")}}</td>
+                        @if (auth()->user()->level=="admin")
                         <td>
                             <form action="{{ route('minuman.destroy',  $data->id) }}" method="POST">
                                 <a class="btn btn-icons btn-primary" href="{{route('minuman.show', $data->id)}}"><i class="fa fa-eye"></i></a>
@@ -61,6 +64,7 @@
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                         @endforeach
                     </tbody>

@@ -60,12 +60,16 @@
                         <td>Rp. {{number_format($data->total_harga, 0, ",", ".")}}</td>
                         <td>
                             <form action="{{ route('pesanan.destroy',  $data->id) }}" method="POST">
+                                @if (auth()->user()->level=="admin")
                                 <a class="btn btn-icons btn-primary" href="{{route('pesanan.show', $data->id)}}"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-icons btn-warning" href="{{route('pesanan.edit', $data->id)}}"><i class="fas fa-edit"></i></a>
+                                @endif
                                 <a class="btn btn-icons btn-light" href="{{route('order', $data->id)}}"><i class="fas fa-print"></i></a>
                                     @csrf
+                                @if (auth()->user()->level=="admin")
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash"></i></button>
+                                @endif
                             </form>
                         </td>
                     </tr>
