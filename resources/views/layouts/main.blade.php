@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('templatee/assets/images/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('templatee/assets/images/icon2.png')}}">
     <title>@yield('title')</title>
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
