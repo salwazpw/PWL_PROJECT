@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('templatee//assets/images/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('templatee/assets/images/icon2.png')}}">
     <title>Registrasi - Queen Z Hotel </title>
     <!-- Custom CSS -->
     <link href="{{asset('templatee/dist/css/style.min.css')}}" rel="stylesheet">
