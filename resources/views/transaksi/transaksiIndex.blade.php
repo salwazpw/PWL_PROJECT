@@ -59,7 +59,7 @@
                         <td>{{$data->pengunjung->id }}</td>
                         <td>Rp. {{number_format($data->kamar->harga, 0, ",", ".")}}</td>
                         <td>{{$data->reservasi->jumlah }}</td>
-                        <td>{{$data->tanggal_transaksi}}</td>
+                        <td>{{date('j M Y', strtotime($data->tanggal_transaksi))}}</td>
                         <td>{{$data->biaya_admin}}</td>
                         <td>Rp. {{number_format($data->total_harga, 0, ",", ".")}}</td>
                         <td>

@@ -53,7 +53,7 @@
                 <tr>
                     <td>Tanggal Transaksi</td>
                     <td>:</td>
-                    <td>{{$transaksi->tanggal_transaksi}}</td>
+                    <td>{{date('d F Y', strtotime($transaksi->tanggal_transaksi))}}</td>
                 </tr>
 
                 <tr>

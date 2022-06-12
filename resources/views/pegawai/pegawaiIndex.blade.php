@@ -58,7 +58,7 @@
                         <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->foto_pegawai) }}"></td>
                         <td>{{$data->alamat}}</td>
                         <td>{{$data->jenis_kelamin}}</td>
-                        <td>{{$data->tanggal_lahir}}</td>                       
+                        <td>{{date('j M Y', strtotime($data->tanggal_lahir))}}</td>                      
                         <td>{{$data->no_telp}}</td>
                         <td>{{$data->jabatan}}</td>
                         <td>Rp. {{number_format($data->gaji, 0, ",", ".")}}</td>
