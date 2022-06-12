@@ -36,19 +36,19 @@
             <tr>
                 <td>Tanggal Check In</td>
                 <td>:</td>
-                <td>{{ $reservasi->tanggal_checkin }}</td>
+                <td>{{date('d F Y', strtotime($reservasi->tanggal_checkin))}}</td>
             </tr>
 
             <tr>
                 <td>Tanggal Check Out</td>
                 <td>:</td>
-                <td>{{ $reservasi->tanggal_checkout }}</td>
+                <td>{{date('d F Y', strtotime($reservasi->tanggal_checkout))}}</td>
             </tr>
 
             <td colspan="4">==============================================================</td>
         </table>
 
-            <p style="padding-left: 379px">Tanggal Reservasi: {{ $reservasi->tanggal_booking }}</p>
+            <p style="padding-left: 379px">Tanggal Reservasi:{{date('d F Y', strtotime($reservasi->tanggal_booking))}}</p>
         <br><br><br><br><br><br><br>
 
         <center>
