@@ -54,9 +54,9 @@
                         <td>{{$data->id}}</td>
                         <td>{{$data->pengunjung->id }}</td>
                         <td>{{$data->kamar->id }}</td>
-                        <td>{{$data->tanggal_booking }}</td>
-                        <td>{{$data->tanggal_checkin}}</td>
-                        <td>{{$data->tanggal_checkout }}</td>
+                        <td>{{date('j M Y', strtotime($data->tanggal_booking))}}</td>
+                        <td>{{date('j M Y', strtotime($data->tanggal_checkin))}}</td>
+                        <td>{{date('j M Y', strtotime($data->tanggal_checkout))}}</td>
                         <td>{{$data->jumlah}}</td>
                         <td>
                             <form action="{{ route('reservasi.destroy',  $data->id) }}" method="POST">
