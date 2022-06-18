@@ -46,7 +46,7 @@
                             <th scope="col">Tanggal Lahir</th>
                             <th scope="col">No Telepon</th>
                             <th scope="col">Jabatan</th>
-                            <th scope="col">Gaji</th>
+                            <th scope="col" width="300px">Gaji</th>
                             <th scope="col" width="500px">Aksi</th>
                         </tr>
                     </thead>

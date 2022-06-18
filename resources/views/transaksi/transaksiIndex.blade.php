@@ -47,7 +47,7 @@
                             <th scope="col" width="150px">Tanggal Transaksi</th>
                             <th scope="col">Biaya Admin</th>
                             <th scope="col" width="150px">Total Harga</th>
-                            <th scope="col" width="200px">Aksi</th>
+                            <th scope="col" width="300px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -45,7 +45,7 @@
                             <th scope="col">Nama Minuman</th>
                             <th scope="col">Jumlah Minuman</th>
                             <th scope="col" width="200px">Total Harga</th>
-                            <th scope="col" width="200px">Aksi</th>
+                            <th scope="col" width="220px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

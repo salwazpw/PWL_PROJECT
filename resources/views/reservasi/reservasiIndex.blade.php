@@ -45,7 +45,7 @@
                             <th scope="col">Tanggal Check In</th>
                             <th scope="col">Tanggal Check Out</th>
                             <th scope="col">Jumlah Hari</th>
-                            <th scope="col" width="200px">Aksi</th>
+                            <th scope="col" width="220px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
