@@ -54,7 +54,7 @@
                     <tr>
                         <td>{{$data->id}}</td>
                         <td>{{$data->tipe_kamar}}</td>
-                        <td><img width="100px" height="100px" src="{{ asset('storage/' . $data->foto_kamar) }}"></td>
+                        <td><img width="150px" height="100px" src="{{ asset('storage/' . $data->foto_kamar) }}"></td>
                         <td>Rp. {{number_format($data->harga, 0, ",", ".")}}</td>
                         @if (auth()->user()->level=="admin")
                         <td>

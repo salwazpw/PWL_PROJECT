@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Foto Kamar</label><br>
-                            <img width="150px" src="{{ asset('storage/' . $kamar->foto_kamar) }}">
+                            <img width="600px" height="500px" src="{{ asset('storage/' . $kamar->foto_kamar) }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Harga</label>
