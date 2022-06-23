@@ -223,12 +223,12 @@ $jml_minuman = mysqli_num_rows($query4);
                         <div id="campaign-v2" class="mt-2" style="height: 380px; width:100%;">
                             <div align = "center" >
                                 <img src="{{asset('templatee/assets/images/fitnesscenter1.jpg')}}" 
-                                style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                                style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                             </div>
                             <br>
                             <div align = "center">
                                 <img src="{{asset('templatee/assets/images/fitnesscenter2.jpg')}}" 
-                                style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                                style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                             </div>                            
                         </div>                    
                 </div>
@@ -241,12 +241,12 @@ $jml_minuman = mysqli_num_rows($query4);
                     <div style="height:380px;">
                         <div align = "center" >
                             <img src="{{asset('templatee/assets/images/pool1.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                         <br>
                         <div align = "center">
                             <img src="{{asset('templatee/assets/images/pool2.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                     </div>
                 </div>
@@ -259,12 +259,12 @@ $jml_minuman = mysqli_num_rows($query4);
                     <div style="height:380px">
                         <div align = "center" >
                             <img src="{{asset('templatee/assets/images/restaurant1.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 250, 250); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                         <br>
                         <div align = "center">
                             <img src="{{asset('templatee/assets/images/restaurant2.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                     </div>
                 </div>
@@ -285,12 +285,12 @@ $jml_minuman = mysqli_num_rows($query4);
                         <div id="campaign-v2" class="mt-2" style="height: 380px; width:100%;">
                             <div align = "center" >
                                 <img src="{{asset('templatee/assets/images/bar1.jpg')}}" 
-                                style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                                style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                             </div>
                             <br>
                             <div align = "center">
                                 <img src="{{asset('templatee/assets/images/bar2.jpg')}}" 
-                                style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                                style="border-color: rgb(255, 253, 253); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                             </div>                            
                         </div>                    
                 </div>
@@ -303,12 +303,12 @@ $jml_minuman = mysqli_num_rows($query4);
                     <div style="height:380px;">
                         <div align = "center" >
                             <img src="{{asset('templatee/assets/images/ballroom1.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                         <br>
                         <div align = "center">
                             <img src="{{asset('templatee/assets/images/ballroom2.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                     </div>
                 </div>
@@ -321,12 +321,12 @@ $jml_minuman = mysqli_num_rows($query4);
                     <div style="height:380px">
                         <div align = "center" >
                             <img src="{{asset('templatee/assets/images/spa1.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                         <br>
                         <div align = "center">
                             <img src="{{asset('templatee/assets/images/spa2.jpg')}}" 
-                            style="border-color: black; border-style: solid;" width="250px" height="166px"/>
+                            style="border-color: rgb(255, 255, 255); border-style: solid; border-radius:10px;" width="250px" height="166px"/>
                         </div>
                     </div>
                 </div>
