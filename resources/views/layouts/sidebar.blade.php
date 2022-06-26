@@ -51,7 +51,7 @@
                       class="hide-menu">Data Transaksi</span></a>
               </li>
               @endif
-              <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
+              <li class="nav-small-cap"><span class="hide-menu">Account</span></li>
               <li class="sidebar-item"> <a class="sidebar-link sidebar-link " href="{{route('logout')}}"
                       aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                           class="hide-menu">Logout</span></a>
