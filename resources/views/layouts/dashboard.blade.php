@@ -134,6 +134,7 @@ $jml_minuman = mysqli_num_rows($query4);
                         <div class="card-body">
                             <h4 class="card-title">Total Income</h4>
                             <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
+                            @if (auth()->user()->level == 'admin')
                             <ul class="list-style-none mb-0">
                                 <li>
                                     <i class="fas fa-circle text-primary font-10 mr-2"></i>
@@ -151,6 +152,23 @@ $jml_minuman = mysqli_num_rows($query4);
                                     <span class="text-dark float-right font-weight-medium"></span>
                                 </li>
                             </ul>
+                            @else
+                            <ul class="list-style-none mb-0">
+                                <li>
+                                    <i class="fas fa-circle text-primary font-10 mr-2"></i>
+                                    <span class="text-muted">Total Transaksi</span>
+                                </li>
+                                <li class="mt-3">
+                                    <i class="fas fa-circle text-danger font-10 mr-2"></i>
+                                    <span class="text-muted">Total Pesanan</span>
+                                </li>
+                                <li class="mt-3">
+                                    <i class="fas fa-circle text-cyan font-10 mr-2"></i>
+                                    <span class="text-muted">Lain-lain</span>
+                                    <span class="text-dark float-right font-weight-medium"></span>
+                                </li>
+                            </ul>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -218,7 +236,7 @@ $jml_minuman = mysqli_num_rows($query4);
                         <div class="card-body">
                             <h4 class="card-title">Location</h4><br><br><br>
                             <div class="" style="height:230px">
-                                <img src="{{ asset('templatee/assets/images/peta.png') }}" width="250px"
+                                <img src="{{ asset('templatee/assets/images/map.png') }}" width="300px"
                                     height="166px">
                             </div>
                             <ul class="list-inline text-center mt-5 mb-2">

@@ -197,7 +197,7 @@
                                     <img src="{{ asset('templatee/assets/images/users/admin.png') }}" alt="user"
                                         class="rounded-circle" width="40">
                                 @else
-                                    <img src="{{ asset('templatee/assets/images/users/user.png') }}" alt="user"
+                                    <img src="{{ asset('templatee/assets/images/users/user3.png') }}" alt="user"
                                         class="rounded-circle" width="40">
                                 @endif
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span>
