@@ -175,7 +175,7 @@ $jml_minuman = mysqli_num_rows($query4);
                 <div class="col-lg-4 col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Fasilites</h4>
+                            <h4 class="card-title">Facilities</h4>
                             <div style="height:300px;">
                                 <br>
                                 <div>
