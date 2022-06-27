@@ -153,9 +153,15 @@ class ReservasiController extends Controller
      */
     public function destroy($id)
     {
-        Reservasi::find($id)->delete();
-        return redirect()->route('reservasi.index')
-            -> with('success', 'Reservasi Berhasil Dihapus');
+        try{
+            Reservasi::find($id)->delete();
+            return redirect()->route('reservasi.index')
+                -> with('success', 'Reservasi Berhasil Dihapus');
+        }
+        catch (\Exception $e) {
+            Alert::error('Gagal','Data Tidak Dapat Dihapus Karena Terhubung dengan Tabel Lain');
+            return redirect()->route('reservasi.index');
+       }
     }
 
     public function reservasi($id){

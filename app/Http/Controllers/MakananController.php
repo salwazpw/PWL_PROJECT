@@ -37,7 +37,7 @@ class MakananController extends Controller
         $request -> validate([
             'nama_makanan' => 'required|string',
             'gambar_makanan' => 'required',
-            'harga' => 'required',
+            'harga' => 'required|numbering',
         ]);
 
         $makanan = new Makanan();
@@ -96,8 +96,17 @@ class MakananController extends Controller
 
     public function destroy($id)
     {
-        Makanan::find($id)->delete();
-        return redirect()->route('makanan.index')
+        Alert::question('Question Title', 'Question Message');
+        
+        try{
+            Makanan::find($id)->delete();
+            return redirect()->route('makanan.index')
             -> with('success', 'Makanan Berhasil Dihapus');
+        }
+        catch (\Exception $e) {
+            Alert::error('Gagal','Data Tidak Dapat Dihapus Karena Terhubung dengan Tabel Lain');
+            return redirect()->route('makanan.index');
+        }
+        
     }
 }

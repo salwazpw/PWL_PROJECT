@@ -96,8 +96,14 @@ class MinumanController extends Controller
 
     public function destroy($id)
     {
-        Minuman::find($id)->delete();
-        return redirect()->route('minuman.index')
-            -> with('success', 'Minuman Berhasil Dihapus');
+        try{
+            Minuman::find($id)->delete();
+            return redirect()->route('minuman.index')
+                -> with('success', 'Minuman Berhasil Dihapus');
+        }
+        catch (\Exception $e) {
+            Alert::error('Gagal','Data Tidak Dapat Dihapus Karena Terhubung dengan Tabel Lain');
+            return redirect()->route('minuman.index');
+       }
     }
 }

@@ -16,20 +16,20 @@ class PengunjungController extends Controller
     public function index(Request $request)
     {
         $pagination = 5;
-        $pengunjung = Pengunjung::when($request->keyword, function($query) use ($request){
+        $pengunjung = Pengunjung::when($request->keyword, function ($query) use ($request) {
             $query
-            ->where('id','like',"%{$request->keyword}%")
-            ->orWhere('nik','like',"%{$request->keyword}%")
-            ->orWhere('nama','like',"%{$request->keyword}%")
-            ->orWhere('jenis_kelamin','like',"%{$request->keyword}%")
-            ->orWhere('alamat','like',"%{$request->keyword}%")
-            ->orWhere('no_telp','like',"%{$request->keyword}%");;
+                ->where('id', 'like', "%{$request->keyword}%")
+                ->orWhere('nik', 'like', "%{$request->keyword}%")
+                ->orWhere('nama', 'like', "%{$request->keyword}%")
+                ->orWhere('jenis_kelamin', 'like', "%{$request->keyword}%")
+                ->orWhere('alamat', 'like', "%{$request->keyword}%")
+                ->orWhere('no_telp', 'like', "%{$request->keyword}%");;
         })->orderBy('id')->paginate($pagination);
 
 
-            $pengunjung->appends($request->only('keyword'));
-            return view('pengunjung.pengunjungIndex',compact('pengunjung'))
-                ->with('i',(request()->input('page',1)-1)*$pagination);
+        $pengunjung->appends($request->only('keyword'));
+        return view('pengunjung.pengunjungIndex', compact('pengunjung'))
+            ->with('i', (request()->input('page', 1) - 1) * $pagination);
     }
 
     /**
@@ -40,7 +40,7 @@ class PengunjungController extends Controller
     public function create()
     {
         $pengunjung = Pengunjung::all();
-        return view('pengunjung.pengunjungCreate',['pengunjung'=>$pengunjung]);
+        return view('pengunjung.pengunjungCreate', ['pengunjung' => $pengunjung]);
     }
 
     /**
@@ -51,7 +51,7 @@ class PengunjungController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
+        $request->validate([
             'nik' => 'required|max:16',
             'nama' => 'required|string',
             'jenis_kelamin' => 'required',
@@ -66,8 +66,8 @@ class PengunjungController extends Controller
         $pengunjung->alamat = $request->get('alamat');
         $pengunjung->no_telp = $request->get('no_telp');
         $pengunjung->save();
-        
-        Alert::success('Success','Data pengunjung Berhasil Ditambahkan');
+
+        Alert::success('Success', 'Data pengunjung Berhasil Ditambahkan');
         return redirect()->route('pengunjung.index');
     }
 
@@ -80,7 +80,7 @@ class PengunjungController extends Controller
     public function show($id)
     {
         $pengunjung = Pengunjung::find($id);
-        return view('pengunjung.pengunjungDetail',compact('pengunjung'));
+        return view('pengunjung.pengunjungDetail', compact('pengunjung'));
     }
 
     /**
@@ -92,7 +92,7 @@ class PengunjungController extends Controller
     public function edit($id)
     {
         $pengunjung = Pengunjung::find($id);
-        return view('pengunjung.pengunjungEdit',compact('pengunjung'));
+        return view('pengunjung.pengunjungEdit', compact('pengunjung'));
     }
 
     /**
@@ -104,7 +104,7 @@ class PengunjungController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request -> validate([
+        $request->validate([
             'nik' => 'required|max:16',
             'nama' => 'required|string',
             'jenis_kelamin' => 'required',
@@ -120,7 +120,7 @@ class PengunjungController extends Controller
         $pengunjung->save();
 
         return redirect()->route('pengunjung.index')
-        ->with('success', 'Data Pengunjung Berhasil Diupdate');
+            ->with('success', 'Data Pengunjung Berhasil Diupdate');
     }
 
     /**
@@ -131,8 +131,13 @@ class PengunjungController extends Controller
      */
     public function destroy($id)
     {
-        Pengunjung::find($id)->delete();
-        return redirect()->route('pengunjung.index')
-            -> with('success', 'Pengunjung Berhasil Dihapus');
+        try {
+            Pengunjung::find($id)->delete();
+            return redirect()->route('pengunjung.index')
+                ->with('success', 'Pengunjung Berhasil Dihapus');
+        } catch (\Exception $e) {
+            Alert::error('Gagal','Data Tidak Dapat Dihapus Karena Terhubung dengan Tabel Lain');
+            return redirect()->route('pengunjung.index');
+        }
     }
 }
