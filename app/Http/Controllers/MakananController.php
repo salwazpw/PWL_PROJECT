@@ -95,9 +95,7 @@ class MakananController extends Controller
     }
 
     public function destroy($id)
-    {
-        Alert::question('Question Title', 'Question Message');
-        
+    {        
         try{
             Makanan::find($id)->delete();
             return redirect()->route('makanan.index')

@@ -128,7 +128,6 @@ class PesananController extends Controller
 
     public function destroy($id)
     {
-        Alert::question('Are You Sure?', 'once deleted you wont able to see this data');
         Pesanan::find($id)->delete();
         return redirect()->route('pesanan.index')
             -> with('success', 'Pesanan Berhasil Dihapus');
