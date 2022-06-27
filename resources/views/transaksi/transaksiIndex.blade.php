@@ -72,7 +72,8 @@ Data Transaksi | QUEEN Z
                                 @csrf
                                 @if (auth()->user()->level=="admin")
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-icons btn-danger"><i class="fa fa-trash delete"></i></button>
+                                <input name="_method" type="hidden" value="DELETE">
+                                <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'><i class="fa fa-trash"></i></button>
                                 @endif
                             </form>
                         </td>
@@ -100,6 +101,30 @@ Data Transaksi | QUEEN Z
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        $('.show_confirm').click(function(event) {
+            var form = $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                    title: `Are you sure you want to delete this record? `,
+                    text: "If you delete this, it will be gone forever.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        form.submit();
+                    }
+                });
+        });
+    </script>
 </div>
 </div>
 @endsection
@@ -108,5 +133,4 @@ Data Transaksi | QUEEN Z
 <script>
     $('#transaksi').addClass('active');
 </script>
-
 @endsection
