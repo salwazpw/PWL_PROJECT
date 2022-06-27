@@ -47,7 +47,7 @@
                       <label for="exampleInputEmail1">ID Pengunjung</label>
                       <select class="form-control" id="pengunjung_id" name="Pengunjung">
                           @foreach ($pengunjung as $data)
-                              <option value="{{ $data->id }}">{{ $data->id }}</option>
+                              <option value="{{ $data->id }}">{{ $data->id }} - {{ $data->nama }}</option>
                           @endforeach
                       </select>
                   </div>

@@ -48,7 +48,7 @@
                             <label for="Pengunjung">ID Pengunjung</label>
                             <select name="Pengunjung" class="form-control">
                             @foreach ($pengunjung as $data)
-                                <option value="{{ $data->id }}" {{ $transaksi->reservasi_id ? 'selected' : '' }}>{{ $data->id }}</option>
+                                <option value="{{ $data->id }}" {{ $transaksi->reservasi_id ? 'selected' : '' }}>{{ $data->id }} - {{ $data->nama }}</option>
                             @endforeach
                         </select>
                         </div>

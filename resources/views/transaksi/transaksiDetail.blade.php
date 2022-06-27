@@ -22,8 +22,8 @@
                             <input type="text" class="form-control" id="kamar_id" name="Kamar" value="{{$transaksi->kamar->id}}" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">ID Pengunjung</label>
-                            <input type="text" class="form-control" id="pengunjung_id" name="id" value="{{$transaksi->pengunjung->id}}"  readonly >
+                            <label for="exampleInputEmail1">ID - Nama Pengunjung</label>
+                            <input type="text" class="form-control" id="pengunjung_id" name="id" value="{{$transaksi->pengunjung->id}} - {{$transaksi->pengunjung->nama}}"  readonly >
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Harga Kamar</label>

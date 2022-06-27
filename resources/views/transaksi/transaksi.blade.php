@@ -39,7 +39,7 @@
                 <tr>
                     <td>ID Pengunjung</td>
                     <td>:</td>
-                    <td>{{$transaksi->pengunjung->id }}</td>
+                    <td>{{$transaksi->pengunjung->id }} - {{$transaksi->pengunjung->nama }}</td>
                 </tr>
 
                 <td colspan="4">------------------------------------------------------</td>
