@@ -98,16 +98,6 @@ class PegawaiController extends Controller
             'gaji' => 'required',
         ]);
         $pegawai = Pegawai::where('nip', $nip)->first();
-        $pegawai->nip = $request->get('nip');
-        $pegawai->nama_pegawai = $request->get('nama_pegawai');
-        $image_name = $request->file('foto_pegawai')->store('images', 'public');
-        $pegawai->foto_pegawai = $image_name;
-        $pegawai->alamat = $request->get('alamat');
-        $pegawai->jenis_kelamin = $request->get('jenis_kelamin');
-        $pegawai->tanggal_lahir = $request->get('tanggal_lahir');    
-        $pegawai->no_telp = $request->get('no_telp');
-        $pegawai->jabatan = $request->get('jabatan');
-        $pegawai->gaji = $request->get('gaji');
 
         if($request->hasFile('foto_pegawai')){
             if($pegawai->foto_pegawai && file_exists(storage_path('app/public/'. $pegawai->foto_pegawai))){
@@ -116,6 +106,16 @@ class PegawaiController extends Controller
             $image_name = $request->file('foto_pegawai')->store('images', 'public');
             $pegawai->foto_pegawai = $image_name;
         }
+
+        $pegawai->nip = $request->get('nip');
+        $pegawai->nama_pegawai = $request->get('nama_pegawai');
+        $pegawai->alamat = $request->get('alamat');
+        $pegawai->jenis_kelamin = $request->get('jenis_kelamin');
+        $pegawai->tanggal_lahir = $request->get('tanggal_lahir');    
+        $pegawai->no_telp = $request->get('no_telp');
+        $pegawai->jabatan = $request->get('jabatan');
+        $pegawai->gaji = $request->get('gaji');
+
         $pegawai->save();
 
         // Pegawai::find($nip)->update($request->all());

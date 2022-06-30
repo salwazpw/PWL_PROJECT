@@ -76,11 +76,6 @@ class MinumanController extends Controller
             'harga' => 'required|string',
         ]);
         $minuman = Minuman::where('id', $id)->first();
-        $minuman->nama_minuman = $request->get('nama_minuman');
-        $image_name = $request->file('gambar_minuman')->store('images', 'public');
-        $minuman->gambar_minuman = $image_name;
-        $minuman->harga = $request->get('harga');
-
         if($request->hasFile('gambar_minuman')){
             if($minuman->gambar_minuman && file_exists(storage_path('app/public/'. $minuman->gambar_minuman))){
                 Storage::delete('public/'.$minuman->gambar_minuman);
@@ -88,6 +83,9 @@ class MinumanController extends Controller
             $image_name = $request->file('gambar_minuman')->store('images', 'public');
             $minuman->gambar_minuman = $image_name;
         }
+        $minuman->nama_minuman = $request->get('nama_minuman');
+        $minuman->harga = $request->get('harga');
+        
         $minuman->save();
 
         return redirect()->route('minuman.index')

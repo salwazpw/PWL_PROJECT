@@ -32,7 +32,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="gambar_minuman">Gambar Minuman</label>
-                            <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="Gambar Minuman" name="gambar_minuman" required value="{{$minuman->gambar_minuman}}">
+                            <input type="file" class="form-control" aria-describedby="emailHelp" placeholder="Gambar Minuman" name="gambar_minuman" value="{{$minuman->gambar_minuman}}">
                             <img width="150px" src="{{asset('storage/'. $minuman->gambar_minuman)}}" >
                           </div>
                     </div>

@@ -76,11 +76,6 @@ class MakananController extends Controller
             'harga' => 'required|string',
         ]);
         $makanan = Makanan::where('id', $id)->first();
-        $makanan->nama_makanan = $request->get('nama_makanan');
-        $image_name = $request->file('gambar_makanan')->store('images', 'public');
-        $makanan->gambar_makanan = $image_name;
-        $makanan->harga = $request->get('harga');
-
         if($request->hasFile('gambar_makanan')){
             if($makanan->gambar_makanan && file_exists(storage_path('app/public/'. $makanan->gambar_makanan))){
                 Storage::delete('public/'.$makanan->gambar_makanan);
@@ -88,6 +83,9 @@ class MakananController extends Controller
             $image_name = $request->file('gambar_makanan')->store('images', 'public');
             $makanan->gambar_makanan = $image_name;
         }
+        $makanan->nama_makanan = $request->get('nama_makanan');
+        $makanan->harga = $request->get('harga');
+
         $makanan->save();
 
         return redirect()->route('makanan.index')

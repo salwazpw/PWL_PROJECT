@@ -113,10 +113,6 @@ class KamarController extends Controller
         ]);
 
         $kamar = Kamar::where('id', $id)->first();
-        $image_name = $request->file('foto_kamar')->store('images', 'public');
-        $kamar->foto_kamar = $image_name;
-        $kamar->harga = $request->get('harga');
-
         if ($request->hasFile('foto_kamar')) {
             if ($kamar->foto_kamar && file_exists(storage_path('app/public/' . $kamar->foto_kamar))) {
                 Storage::delete('public/' . $kamar->foto_kamar);
@@ -124,6 +120,7 @@ class KamarController extends Controller
             $image_name = $request->file('foto_kamar')->store('images', 'public');
             $kamar->foto_kamar = $image_name;
         }
+        $kamar->harga = $request->get('harga');
 
         $kamar->save();
 
