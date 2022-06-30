@@ -1,3 +1,7 @@
+<?php
+$koneksi = mysqli_connect('localhost', 'root', '', 'pwl_project');
+?>
+
 @extends('layouts.main')
 @section('title')
     Tambah Data Transaksi
@@ -25,31 +29,29 @@
                 <div class="col-md-12 col-xs-12">
                     <div class="form-group">
                       <label for="exampleInputEmail1">ID Reservasi</label>
-                      <select class="form-control" id="reservasi_id" name="Reservasi">
-                          @foreach ($reservasi as $data)
-                              <option value="{{ $data->id }}">{{ $data->id }}</option>
-                          @endforeach
+                      <select class="form-control" id="reservasi_id" name="Reservasi" onchange='changeValue(this.value)'>
+                        <option value="">--Pilih ID Reservasi--</option>
+                        <?php
+                        $query = mysqli_query($koneksi, 'select * from reservasis');
+                        $jsArray = "var res = new Array();\n";
+                        while ($row = mysqli_fetch_array($query)) {
+                            echo '<option name="id"  value="' . $row['id'] . '">' . $row['id'] . '</option>';
+                            $jsArray .= "res['" . $row['id'] . "'] = {kamar_id:'" . addslashes($row['kamar_id']) . "',pengunjung_id:'".addslashes($row['pengunjung_id'])."'};\n";
+                        }
+                        ?>
                       </select>
                   </div>
                   </div>
                   <div class="col-md-12 col-xs-12">
                     <div class="form-group">
                       <label for="exampleInputEmail1">No. Kamar</label>
-                      <select class="form-control" id="kamar_id" name="Kamar">
-                          @foreach ($kamar as $data)
-                              <option value="{{ $data->id }}">{{ $data->id }}</option>
-                          @endforeach
-                      </select>
+                      <input type="number" class="form-control" id="kamar_id" name="kamar_id" ></input>
                   </div>
                   </div>
                   <div class="col-md-12 col-xs-12">
                     <div class="form-group">
                       <label for="exampleInputEmail1">ID Pengunjung</label>
-                      <select class="form-control" id="pengunjung_id" name="Pengunjung">
-                          @foreach ($pengunjung as $data)
-                              <option value="{{ $data->id }}">{{ $data->id }} - {{ $data->nama }}</option>
-                          @endforeach
-                      </select>
+                      <input type="number" class="form-control" id="pengunjung_id" name="pengunjung_id" ></input>
                   </div>
                   </div>
                   <div class="col-md-12 col-xs-12">
@@ -110,3 +112,12 @@
       }
     </script>
 @endsection
+
+<script type="text/javascript">
+  <?php echo $jsArray; ?>
+
+  function changeValue(id) {
+      document.getElementById('kamar_id').value = res[id].kamar_id;
+      document.getElementById('pengunjung_id').value = res[id].pengunjung_id;
+  };
+</script>
