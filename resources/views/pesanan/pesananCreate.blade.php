@@ -69,7 +69,7 @@ $koneksi = mysqli_connect('localhost', 'root', '', 'pwl_project');
                     <div class="form-group">
                         <label for="exampleInputEmail1">Menu Minuman</label>
                         <select class="form-control" id="minuman_id" onchange='changeVal(this.value)' name="Minuman">
-                          <option value="">--Pilih Menu Makanan--</option>
+                          <option value="">--Pilih Menu Minuman--</option>
                           <?php
                           $query1 = mysqli_query($koneksi, 'select * from minumen');
                           $jsArrays = "var harga = new Array();\n";
